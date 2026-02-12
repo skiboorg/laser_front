@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap')
+body
+  font-family: "Inter", sans-serif
+  font-optical-sizing: auto
+  font-weight: 400
+  font-size: 14px
+  font-style: normal
+  font-variation-settings: "wdth" 100
+  background-color: #fff
+  line-height: 140%
+  letter-spacing: -0.03px
+  color: #222222
+
+::-webkit-scrollbar
+  width: 5px
+
+::-webkit-scrollbar-track
+  background: #f1f1f1
+
+::-webkit-scrollbar-thumb
+  background: #f59e0b
+  border-radius: 500px
+
+::-webkit-scrollbar-thumb:hover
+  background: #d97706
+
+
+.p-button
+  font-size: 14px !important
+  &-icon
+    font-size: 14px !important
+
+.p-button-outlined.p-button-secondary:not(:disabled):hover
+  svg
+    path
+      fill: black
+  & .p-button-label
+    color: black !important
+  & .p-button-icon
+    color: black !important
+
+.link
+  color: #1E37A3
+  border-bottom: 1px solid #1E37A3
+  cursor: pointer
+  &.black
+    color: #222222 !important
+
+.p-checkbox-box
+  border-radius: 0 !important
+  border: 2px solid #1E37A3 !important
+.p-checkbox-checked .p-checkbox-box
+  background: #1E37A3 !important

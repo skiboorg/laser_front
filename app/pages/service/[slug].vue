@@ -1,0 +1,143 @@
+<script setup lang="ts">
+// definePageMeta({
+//   guest: true,
+//   layout: 'auth'
+// })
+const {slug} = useRoute().params
+const {$api} = useNuxtApp()
+const {data:service} = await useAsyncData(()=>$api.blank.service(slug))
+
+
+</script>
+<template>
+  <BlockOffer
+      :bg_image="service.image_background"
+      :title="service.title"
+      :subtitle="service.short_description"
+      :tags="service.tags_list"
+  />
+
+  <BlockSection :show_title="false">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[105px] items-center">
+      <div class="">
+        <p  class="mb-5 text-[#9F9F9F]" >Об услуге</p>
+        <h2 class="text-4xl border-b border-[#E0E0E0] pb-10" >{{service.title}}</h2>
+        <div class="mt-10 max-w-[90%]" v-html="service.description">
+        </div>
+      </div>
+      <div class="">
+        <img class="w-full object-cover h-full" src="https://placehold.co/600x400" alt="">
+      </div>
+
+    </div>
+  </BlockSection>
+
+  <BlockSection :show_title="true" :title="service.title" small_title="Преимущества">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+      <CardInfo v-for="item,index  in service.advantages">
+        <template #top>
+          0{{index+1}}
+        </template>
+        <template #title>{{item.title}}</template>
+        <template #text>
+         {{item.description}}
+        </template>
+      </CardInfo>
+    </div>
+  </BlockSection>
+  <BlockSection :show_title="false" class="text-white py-[120px]" style="background-image: url(/video.jpg)">
+
+
+    <p  class="mb-5 " >Сферы</p>
+    <h2 class="text-3xl md:text-4xl pb-10 md:pb-[60px] border-b border-[#B4B2B2] mb-10" >Отрасли применения</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+      <div v-for="item in service.industries" class="border border-white px-5 py-7 h-[320px] flex flex-col">
+        <div class="flex items-center justify-between">
+          <p class="text-2xl">{{item.name}}</p>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="12" height="12" fill="white"/>
+          </svg>
+
+        </div>
+        <p class="mt-auto">{{item.description}}</p>
+      </div>
+
+
+    </div>
+
+
+  </BlockSection>
+  <BlockSection :show_title="true" title="Технические характеристики" small_title="Характеристики" >
+    <template #extra>
+      <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>
+    </template>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="bg-[#F6F6F6] px-5 py-7  ">
+        <div class="flex items-center justify-between pb-7 mb-7 border-b border-[#D8D8D8]">
+          <p class="text-2xl text-primary">Габариты обрабатываемых деталей</p>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="12" height="12" fill="#1E37A3"/>
+          </svg>
+
+
+        </div>
+        <img class="w-full object-cover h-auto" src="https://placehold.co/600x400" alt="">
+      </div>
+      <div class="bg-[#F6F6F6] px-5 py-7  ">
+        <div class="flex items-center justify-between pb-7 mb-7 border-b border-[#D8D8D8]">
+          <p class="text-2xl text-primary">Описание главного модуля</p>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="12" height="12" fill="#1E37A3"/>
+          </svg>
+
+
+        </div>
+        <div class="space-y-7">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias atque, distinctio expedita iste laboriosam modi odit optio quia sit!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias atque, distinctio expedita iste laboriosam modi odit optio quia sit!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias atque, distinctio expedita iste laboriosam modi odit optio quia sit!</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </BlockSection>
+  <BlockSection :show_title="true" title="Этапы работы" small_title="Этапы">
+    <div
+        v-for="(item, index) in 3"
+        :key="index"
+        class="flex flex-col items-start md:grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-0 pb-8 border-b border-[#E0E0E0] mb-8 md:items-center"
+    >
+      <div class="col-span-12 md:col-span-2">
+        <p class="text-primary text-[14px] md:text-2xl">0{{ index + 1 }}</p>
+      </div>
+
+      <div class="col-span-12 md:col-span-4">
+        <p class="text-2xl text-primary max-w-[80%]" >
+          Предварительный выезд и сбор требований
+        </p>
+
+
+      </div>
+
+      <div class="col-span-12 md:col-span-6 md:max-w-[80%] ">
+        Анализ детали, геометрии, рабочих условий, требуемых свойств и ограничений. Определение допусков по размеру
+      </div>
+    </div>
+  </BlockSection>
+  <BlockSection :show_title="true" title="Реализованные проекты" small_title="Оборудование" >
+    <template #extra>
+      <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Все проекты"/>
+    </template>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <CardReleasedProject v-for="project in service.projects" :project="project"/>
+    </div>
+  </BlockSection>
+
+  <BlockFeedback :items="['1','1','1','1','1','1','1','1',]"/>
+  <PageBlockFaq/>
+
+</template>
