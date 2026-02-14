@@ -4,10 +4,10 @@
 //   layout: 'auth'
 // })
 const {$api} = useNuxtApp()
-const {data:services} = await useAsyncData(()=>$api.blank.services())
-const {data:equipments} = await useAsyncData(()=>$api.blank.equipments())
-const {data:projects} = await useAsyncData(()=>$api.blank.projects())
-
+const {data:services} =  useAsyncData(()=>$api.blank.services())
+const {data:equipments} =  useAsyncData(()=>$api.blank.equipments())
+const {data:projects} =  useAsyncData(()=>$api.blank.projects())
+const {data:news} =  useAsyncData(()=>$api.blank.news(true))
 </script>
 <template>
   <BlockOffer
@@ -19,7 +19,7 @@ const {data:projects} = await useAsyncData(()=>$api.blank.projects())
   <BlockSection :show_title="true" title="Наши услуги" small_title="Услуги">
 
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-      <CardInfo v-for="service in services.results" :key="service.id" >
+      <CardInfo v-for="service in services?.results" :key="service.id" >
         <template #top>
           <img class="w-8 h-8 object-contain" :src="service.icon"></img>
         </template>
@@ -36,7 +36,7 @@ const {data:projects} = await useAsyncData(()=>$api.blank.projects())
   </BlockSection>
   <BlockSection :show_title="true" title="Виды оборудования" small_title="Оборудование" sub_title="У нас представлен ассортимент оборудования, который мы можем адаптировать под ваши запросы, вы можете оформить заявку на его приобретение на нашем сайте.">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <CardEquipment v-for="equipment in equipments.results" :equipment="equipment"/>
+      <CardEquipment v-for="equipment in equipments?.results" :equipment="equipment"/>
     </div>
   </BlockSection>
   <PageBlockForm/>
@@ -46,7 +46,7 @@ const {data:projects} = await useAsyncData(()=>$api.blank.projects())
       <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Все проекты"/>
     </template>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <CardReleasedProject v-for="project in projects.results" :project="project"/>
+      <CardReleasedProject v-for="project in projects?.results" :project="project"/>
 
     </div>
   </BlockSection>
@@ -55,8 +55,8 @@ const {data:projects} = await useAsyncData(()=>$api.blank.projects())
       <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Все новости"/>
     </template>
 
-    <CardNews/>
-    <CardNews/>
+    <CardNews v-for="item,index in news?.results" :item="item" :index="index"/>
+
 
   </BlockSection>
 <PageBlockFaq/>

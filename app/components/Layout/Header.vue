@@ -8,22 +8,28 @@ watch(() => route.fullPath, () => {
   mobileMenuActive.value = false
 });
 
+const is_header_black = computed(() => {
+  return route.meta.header === 'black'
+})
+
 const links = [
 
   {label:'О компании',to:'/about'},
   {label:'Оборудование',to:'/equipment'},
   {label:'Услуги',to:'/service'},
   {label:'Наши проекты',to:'/project'},
-  // {label:'Новости',to:'/media'},
+  {label:'Новости',to:'/news'},
   // {label:'Контакты',to:'/#test'},
 
 ]
 </script>
 
 <template>
-  <header class="absolute w-full top-0 left-0  z-20  text-white py-8  border-b border-[#525252]">
+  <header class=" w-full top-0 left-0  z-20   py-8  border-b "
+          :class="is_header_black ? 'mb-14 border-[#DEDEDE]' : 'absolute text-white border-[#525252]'"
+  >
     <div class="container mx-auto flex items-center justify-between ">
-        <BlockLogo/>
+        <BlockLogo :logo_black="is_header_black"/>
       <nav  class="hidden lg:block">
         <ul class="flex gap-7">
           <li v-for="link in links"><NuxtLink class="font-medium "  :to="link.to">{{link.label}}</NuxtLink></li>
@@ -34,7 +40,7 @@ const links = [
                 <p><a class="font-medium" href="tel:8 912 000 00 00">8 912 000 00 00</a></p>
                 <p><a class="font-medium" href="mailto:info@e-laser.pro">info@e-laser.pro</a></p>
               </div>
-            <Button severity="secondary" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>
+            <Button :severity="is_header_black ? 'primary' : 'secondary'" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>
       </div>
       <div class="flex lg:hidden items-stretch justify-end gap-2 w-full">
         <a class="font-medium block" href="tel:8 912 000 00 00">
