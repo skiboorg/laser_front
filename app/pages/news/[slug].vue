@@ -9,10 +9,16 @@ const {data} = await useAsyncData(()=>$api.blank.news_item(route.params.slug))
 </script>
 
 <template>
-  <pre>
-
-  </pre>
   <div class="container">
+
+      <div class="flex gap-2 mb-5 text-[#9F9F9F]">
+        <nuxt-link to="/">Главная</nuxt-link>
+        /
+        <nuxt-link to="/news">Новости</nuxt-link>
+        /
+        <span>{{data.name}}</span>
+      </div>
+
     <div class="grid grid-cols-12 gap-10">
       <div class="col-span-12 md:col-span-8">
 
@@ -30,7 +36,7 @@ const {data} = await useAsyncData(()=>$api.blank.news_item(route.params.slug))
             <img  :src="i.image" alt="">
           </div>
         </div>
-        <div class="" v-html="data.content"></div>
+        <div class="html-content" v-html="data.content"></div>
 
       </div>
       <div class="col-span-12 md:col-span-4">

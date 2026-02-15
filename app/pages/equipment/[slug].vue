@@ -11,7 +11,7 @@ const {data:equipment} = await useAsyncData(()=>$api.blank.equipment(slug))
 </script>
 <template>
   <BlockOffer
-      :bg_image="equipment.image_background"
+      :bg_image="equipment.background_image"
       :title="equipment.title"
       :subtitle="equipment.short_description"
       :tags="equipment.tags_list"

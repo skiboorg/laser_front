@@ -43,7 +43,10 @@ const {data:news} =  useAsyncData(()=>$api.blank.news(true))
   <PageBlockAbout/>
   <BlockSection :show_title="true" title="Реализованные проекты" small_title="Оборудование" >
     <template #extra>
-      <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Все проекты"/>
+      <nuxt-link to="/project">
+        <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Все проекты"/>
+      </nuxt-link>
+
     </template>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       <CardReleasedProject v-for="project in projects?.results" :project="project"/>
@@ -52,7 +55,10 @@ const {data:news} =  useAsyncData(()=>$api.blank.news(true))
   </BlockSection>
   <BlockSection :show_title="true" title="Новости компании" small_title="Новости" >
     <template #extra>
-      <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Все новости"/>
+      <nuxt-link to="/news">
+        <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Все новости"/>
+      </nuxt-link>
+
     </template>
 
     <CardNews v-for="item,index in news?.results" :item="item" :index="index"/>
