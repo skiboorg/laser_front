@@ -18,7 +18,7 @@
       <slot name="top"></slot>
     </div>
 
-    <p v-if="$slots.title" class="text-2xl mb-8">
+    <p v-if="$slots.title" class="text-xl mb-8">
       <slot name="title"></slot>
     </p>
 

@@ -1,5 +1,51 @@
 <script setup lang="ts">
+const {$appFetch} = useNuxtApp()
+const loading = ref(false)
+const send = ref(false)
+const agree = ref(false)
 
+const emits = defineEmits(['send'])
+
+const formData = ref({
+  name: '',
+  company: '',
+  email: '',
+  file: null as File | null,
+})
+
+const handleFileChange = (event: Event) => {
+  const target = event.target as HTMLInputElement
+  if (target.files && target.files.length > 0) {
+    formData.value.file = target.files[0]
+  }
+}
+
+const sendForm = async () => {
+  loading.value = true
+
+  // Собираем данные в FormData
+  const fd = new FormData()
+  fd.append('name', formData.value.name || '')
+  fd.append('company', formData.value.company || '')
+  fd.append('email', formData.value.email || '')
+  if (formData.value.file) {
+    fd.append('file', formData.value.file)
+  }
+
+  try {
+    await $appFetch('/api/data/form', {
+      method: 'POST',
+      body: fd, // FormData напрямую
+    })
+    emits('send')
+    send.value = true
+    //navigateTo('/thanks')
+  } catch (e) {
+    console.error('Ошибка отправки формы:', e)
+  } finally {
+    loading.value = false
+  }
+}
 </script>
 
 <template>
@@ -13,13 +59,13 @@
   </div>
   <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
     <div class="col-span-12 md:col-span-6">
-      <InputText fluid variant="filled" placeholder="Ваше имя*"/>
+      <InputText fluid variant="filled" v-model="formData.name" placeholder="Ваше имя*"/>
     </div>
     <div class="col-span-12 md:col-span-6">
-      <InputText fluid variant="filled" placeholder="Наименование компании*"/>
+      <InputText fluid variant="filled" v-model="formData.company" placeholder="Наименование компании*"/>
     </div>
     <div class="col-span-12">
-      <InputText fluid variant="filled" placeholder="Ваша почта*"/>
+      <InputText fluid variant="filled" v-model="formData.email" placeholder="Ваша почта*"/>
     </div>
     <div class="col-span-12 relative">
       <InputText fluid variant="filled" placeholder="Карточка предприятия*"/>
@@ -34,12 +80,18 @@
     </div>
     <div class="col-span-12">
       <div class="flex items-center gap-2">
-        <Checkbox v-model="pizza" inputId="ingredient4" name="pizza" value="Onion" />
+        <Checkbox v-model="agree" inputId="ingredient4" name="pizza" value="Onion" />
         <label for="ingredient4">Оставляя заявку, вы соглашаетесь с политикой обработки персональных данных </label>
       </div>
     </div>
     <div class="col-span-12">
-      <Button fluid severity="primary" icon="pi pi-plus" icon-pos="right" label="Отправить заявку"/>
+      <Button v-if="!send" fluid severity="primary" icon="pi pi-plus" icon-pos="right"
+              :label="loading ? 'Отправка...' : 'Отправить заявку'"
+              :loading="loading"
+              :disabled="!agree || !formData.name || !formData.company "
+              @click="sendForm"
+             />
+      <p v-else class="text-green-500 font-medium text-xl text-center">Форма отправлена</p>
     </div>
 
   </div>

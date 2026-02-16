@@ -18,13 +18,14 @@ defineProps(["item","index"])
         </p>
 
       </div>
-      <p class="text-2xl mb-8">{{item.name}}</p>
+      <nuxt-link :to="`/news/${item.slug}`"><p class="text-2xl mb-8">{{item.name}}</p></nuxt-link>
+
       <p class="mb-8">{{item.short_description}}</p>
       <div class="flex gap-3">
-        <img class="w-10 h-10 object-cover rounded-full" src="https://placehold.co/600x400" alt="">
+        <img class="w-10 h-10 object-cover rounded-full" :src="item.photo" alt="">
         <div class="">
-          <p class="font-medium">Виолетта Ежова</p>
-          <p class="text-[#9F9F9F]">Маркетолог E-Laser</p>
+          <p class="font-medium">{{item.full_name}}</p>
+          <p class="text-[#9F9F9F]">{{item.position}}</p>
         </div>
       </div>
     </div>

@@ -28,14 +28,14 @@ const toggle = (index: number) => {
     <div
         v-for="(item, index) in items"
         :key="index"
-        class="grid grid-cols-12 pb-8 border-b border-[#E0E0E0] mb-8"
+        class="grid grid-cols-12 pb-6 border-b border-[#E0E0E0] mb-6 items-center"
     >
       <div class="col-span-2">
         <p>0{{ index + 1 }}</p>
       </div>
 
       <div class="col-span-8">
-        <p class="text-2xl cursor-pointer" @click="toggle(index)">
+        <p class="text-xl cursor-pointer" @click="toggle(index)">
           {{ item.q }}
         </p>
 
@@ -44,7 +44,7 @@ const toggle = (index: number) => {
               v-show="activeIndex === index"
               class="answer-wrapper"
           >
-            <p class="mt-8 max-w-[60%]">
+            <p class="mt-8 max-w-[80%]">
               {{ item.a }}
             </p>
           </div>

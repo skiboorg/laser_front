@@ -22,35 +22,21 @@ const {data:equipment} = await useAsyncData(()=>$api.blank.equipment(slug))
     <template #extra>
       <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>
     </template>
+    <div class="space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5" >
 
-    <div class="grid grid-cols-2 gap-5">
-      <div class="bg-[#F6F6F6] px-5 py-7  ">
-        <div class="flex items-center justify-between pb-7 mb-7 border-b border-[#D8D8D8]">
-          <p class="text-2xl text-primary">Габариты обрабатываемых деталей</p>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="12" height="12" fill="#1E37A3"/>
-          </svg>
-
-
-        </div>
-        <img class="w-full object-cover h-auto" src="https://placehold.co/600x400" alt="">
-      </div>
-      <div class="bg-[#F6F6F6] px-5 py-7  ">
-        <div class="flex items-center justify-between pb-7 mb-7 border-b border-[#D8D8D8]">
-          <p class="text-2xl text-primary">Описание главного модуля</p>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="12" height="12" fill="#1E37A3"/>
-          </svg>
-
-
-        </div>
-        <div class="space-y-7">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias atque, distinctio expedita iste laboriosam modi odit optio quia sit!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias atque, distinctio expedita iste laboriosam modi odit optio quia sit!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias atque, distinctio expedita iste laboriosam modi odit optio quia sit!</p>
+        <div class="bg-[#F6F6F6] px-5 py-7  " v-for="item in equipment.technical_specs">
+          <div class="flex items-center justify-between pb-7 mb-7 border-b border-[#D8D8D8]">
+            <p class="text-2xl text-primary">{{item.title}}</p>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="12" height="12" fill="#1E37A3"/>
+            </svg>
+          </div>
+          <div class="html-content" v-html="item.content"> </div>
         </div>
       </div>
     </div>
+
 
 
 
@@ -87,7 +73,7 @@ const {data:equipment} = await useAsyncData(()=>$api.blank.equipment(slug))
         <template #top>
           0{{index+1}}
         </template>
-        <template #title>{{item.title}}</template>
+        <template #title>{{item.name}}</template>
         <template #text>
           {{item.description}}
         </template>

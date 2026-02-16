@@ -1,6 +1,6 @@
 :root {
     /* Настройки кнопок */
-    --p-button-padding-y: 15px;
+    --p-button-padding-y: 10px;
     --p-button-padding-x: 1rem;
     --p-button-border-radius: 0 !important;
     --p-button-font-size: 14px !important;
@@ -8,7 +8,7 @@
     --p-button-secondary-color: black !important;
     --p-button-secondary-background: white !important;
     --p-button-outlined-secondary-border-color: #A4A3A4 !important;
-
+    --p-button-outlined-primary-border-color: #A4A3A4 !important;
 
     /* Настройки полей ввода */
     --p-form-field-padding-x: 16px!important;
