@@ -14,12 +14,13 @@ const props = defineProps(['tags','title','subtitle','bg_image','bg_video','no_b
       <p class="text-white max-w-[470px] text-[16px] mb-24 leading-[150%]" v-html="subtitle"></p>
       <div v-if="alt_buttons" class="flex flex-wrap gap-2">
         <Button severity="secondary" icon="pi pi-plus" icon-pos="right" label="Запросить стоимость"/>
-        <button v-if="!no_button" class="p-button p-component  text-white p-button-outlined" data-p="outlined" type="button" aria-label="Получить расчет" data-pc-name="button" data-p-disabled="false" pc0_137="" data-pc-section="root" data-p-severity="info"><span class="p-button-icon p-button-icon-right pi pi-plus" data-p="right" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label" data-p="">Бесплатная консультация</span></button>
-      </div>
+        <UIOutlineBtn v-if="!no_button" label="Бесплатная консультация"/>
+   </div>
       <div v-else class="grid grid-cols-1 md:flex  gap-2">
+
         <Button  severity="secondary" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>
-        <button v-if="!no_button" class="p-button p-component h-[40px] text-white p-button-outlined" data-p="outlined" type="button" aria-label="Получить расчет" data-pc-name="button" data-p-disabled="false" pc0_137="" data-pc-section="root" data-p-severity="info"><span class="p-button-icon p-button-icon-right pi pi-plus" data-p="right" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label" data-p="">Бесплатная консультация</span></button>
-      </div>
+        <UIOutlineBtn v-if="!no_button" label="Бесплатная консультация"/>
+     </div>
 
     </div>
   </BlockTop>
