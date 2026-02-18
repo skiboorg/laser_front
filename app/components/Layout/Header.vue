@@ -25,16 +25,19 @@ const links = [
 </script>
 
 <template>
-  <header class=" w-full top-0 left-0  z-20   py-8  border-b "
-          :class="is_header_black ? 'mb-14 border-[#DEDEDE]' : 'absolute text-white border-[#525252]'"
+  <header class=" w-full top-0 left-0  z-20  py-4 md:py-8  border-b "
+          :class="is_header_black ? 'mb-14 border-[#DEDEDE]' : 'absolute text-white border-[#ffffff4d]'"
   >
     <div class="container mx-auto flex items-center justify-between ">
+      <div class="flex items-center ">
         <BlockLogo :logo_black="is_header_black"/>
-      <nav  class="hidden lg:block">
-        <ul class="flex gap-7">
-          <li v-for="link in links"><NuxtLink class="font-medium "  :to="link.to">{{link.label}}</NuxtLink></li>
-        </ul>
-      </nav>
+        <nav  class="hidden lg:block ml-20">
+          <ul class="flex gap-7">
+            <li v-for="link in links"><NuxtLink class="font-medium "  :to="link.to">{{link.label}}</NuxtLink></li>
+          </ul>
+        </nav>
+      </div>
+
       <div class="hidden lg:flex items-center gap-8" >
               <div class="">
                 <p><a class="font-medium" href="tel:8 912 000 00 00">8 912 000 00 00</a></p>
@@ -43,6 +46,18 @@ const links = [
             <Button :severity="is_header_black ? 'primary' : 'secondary'" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>
       </div>
       <div class="flex lg:hidden items-stretch justify-end gap-2 w-full">
+        <a class="font-medium block" href="tel:8 912 000 00 00">
+          <Button class="h-full" outlined :severity="is_header_black ? 'primary' : 'secondary'">
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.37351 0.0519676C0.879644 0.158239 0.438918 0.489554 0.207615 0.933393C0.138849 1.06154 0.0919629 1.16781 0.0982144 1.17094C0.10134 1.17719 1.73297 2.26491 3.7178 3.58705C6.14336 5.20299 7.38739 6.01253 7.49992 6.05316C7.7406 6.13755 8.25947 6.13755 8.50015 6.05316C8.61267 6.01253 9.85671 5.20299 12.2823 3.58705C14.2671 2.26491 15.8987 1.17719 15.9019 1.17094C15.9081 1.16781 15.8612 1.06154 15.7925 0.933393C15.558 0.483304 15.1204 0.155113 14.6109 0.048842C14.2921 -0.0167961 1.68608 -0.0167961 1.37351 0.0519676Z"
+                    :fill="is_header_black ? '#1E37A3' : 'white'"/>
+              <path d="M0 6.35321C0 9.8289 0.00937716 10.4853 0.0468858 10.6478C0.212549 11.3542 0.768927 11.8637 1.49409 11.9731C1.63475 11.995 3.82588 12.0043 8.1425 11.9981C14.3064 11.9887 14.5877 11.9856 14.7534 11.9324C15.2191 11.7762 15.5848 11.473 15.7911 11.0792C16.0162 10.6509 16.0037 10.9072 15.9974 6.35009L15.9881 2.2524L12.6373 4.48722C10.7931 5.71558 9.20212 6.76267 9.09897 6.8158C8.75201 6.98771 8.47382 7.0471 8.00184 7.0471C7.53923 7.0471 7.24854 6.98771 6.93285 6.82831C6.84532 6.78455 5.25746 5.73746 3.40391 4.49972C1.55036 3.2651 0.0250058 2.2524 0.0156286 2.2524C0.00625144 2.2524 0 4.09964 0 6.35321Z"
+                    :fill="is_header_black ? '#1E37A3' : 'white'"/>
+            </svg>
+
+
+          </Button>
+        </a>
         <a class="font-medium block" href="tel:8 912 000 00 00">
           <Button class="h-full" outlined :severity="is_header_black ? 'primary' : 'secondary'">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +74,17 @@ const links = [
   </header>
   <Drawer v-model:visible="mobileMenuActive" header=" " position="right">
     <template #header>
-      <BlockLogo/>
+      <svg width="120" height="17" viewBox="0 0 120 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 2.77303V6.01869H1.7379L3.87924 3.56081H15.0515L15.9514 2.64698V3.05176e-05H2.45168L0 2.77303Z" fill="#498FFF"/>
+        <path d="M4.01149 6.20869L0.0625 10.8164V16.282H16.0139V12.4688H2.70553L5.22417 9.89484H16.0139V6.20869H4.01149Z" fill="#1E37A3"/>
+        <path d="M85.3594 2.77301V6.01868H87.0973L89.2386 3.56079H100.411L101.311 2.64697V1.52588e-05H87.8111L85.3594 2.77301Z" fill="#1E37A3"/>
+        <path d="M89.3709 6.20869L85.4219 10.8164V16.282H101.373V12.4688H88.0649L90.5835 9.89484H101.373V6.20869H89.3709Z" fill="#1E37A3"/>
+        <path d="M34.4306 1.52588e-05L32.4375 2.02654V16.2821H46.8705V12.7881H36.4238V1.52588e-05H34.4306Z" fill="#1E37A3"/>
+        <path d="M21.6485 6.28925L19.4492 8.52541V10.2724H21.1336H22.818H26.8032L29.0025 8.03625V6.28925H21.6485Z" fill="#1E37A3"/>
+        <path d="M61.5854 6.87518L52.3662 16.2821H49.6211V13.2161L62.5233 1.52588e-05H65.3599V3.04274V16.2821H61.5854V6.87518Z" fill="#1E37A3"/>
+        <path d="M68.1094 16.1423V12.7881H78.4371V10.9363L68.1094 6.50877V1.52588e-05L82.5424 2.14649e-05V3.07475H71.4231V4.75187L82.5424 9.35813V16.1423H68.1094Z" fill="#1E37A3"/>
+        <path d="M120.001 13.2212V16.2821H117.26L109.653 8.53704V5.52251H112.463L116.221 9.37533L120.001 13.2212ZM107.894 3.09645V16.2821H104.125V3.09645H107.894ZM116.221 9.37533V3.86388H104.125V1.50162e-05L120.001 0.0267834V9.37184L116.221 9.37533Z" fill="#1E37A3"/>
+      </svg>
     </template>
     <div class="flex flex-col items-start justify-between h-full w-full">
       <div class="flex flex-col items-start gap-5 mb-4 mt-[60px] w-full">

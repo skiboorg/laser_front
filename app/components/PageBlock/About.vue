@@ -10,7 +10,7 @@
     <h2 class="text-3xl mb:text-4xl mb-10 md:mb-[60px]" >О компании</h2>
     <div class="grid grid-cols-1  md:grid-cols-12 pb-[60px] border-b border-[#B4B2B2] mb-6">
       <div class="col-span-12 md:col-span-6">
-        <p>
+        <p class="text-xl">
           Обеспечиваем безупречное качество<br>и максимальную прочность деталей<br>в самых сложных условиях эксплуатации.
         </p>
 
@@ -37,7 +37,7 @@
       <div class="border-b border-[#B4B2B2] md:border-none pb-6 md:pb-0">
         <p class="mb-[60px] md:mb-20">01</p>
         <p class="text-[60px] md:text-[100px] mb-10">1 200</p>
-        <p>Площадь аддитивного производства и склада с лазерным оборудованием</p>
+        <p>Площадь аддитивного производства<br> и склада с лазерным оборудованием</p>
       </div>
       <div class="border-b border-[#B4B2B2] md:border-none pb-6 md:pb-0">
         <p class="mb-[60px] md:mb-20">02</p>
@@ -52,7 +52,7 @@
       <div class="border-b border-[#B4B2B2] md:border-none pb-6 md:pb-0">
         <p class="mb-[60px] md:mb-20">04</p>
         <p class="text-[60px] md:text-[100px] mb-10">15</p>
-        <p>Команда инженеров по материаловедению и технологов лазерной обработки</p>
+        <p>Команда инженеров по материаловедению и<br> технологов лазерной обработки</p>
       </div>
     </div>
 

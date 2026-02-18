@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <div class="p-3 font-medium text-white bg-white/10 backdrop-blur-md">
+  <span class="inline-block p-3 font-medium text-white bg-white/10 backdrop-blur-md">
     <slot></slot>
-  </div>
+  </span>
 
 </template>
 

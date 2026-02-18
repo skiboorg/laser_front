@@ -1,15 +1,16 @@
 <script setup lang="ts">
-
+defineProps(['no_hover'])
 </script>
 
 <template>
+
   <div
-      :class="$slots.bottom ? 'h-[360px]' :'h-auto md:h-[320px]'"
+      :class="[$slots.bottom ? 'h-[360px]' :'h-auto md:h-[320px]',no_hover ? '' : 'hover:bg-[#F1F3FA] hover:border-[#F1F3FA]']"
       class="group flex flex-col
          px-5 py-7
          border border-[#E0E0E0]
          transition-colors
-         bg-white hover:bg-[#D0D4E3] hover:border-[#D0D4E3]
+         bg-white
          "
   >
     <div v-if="$slots.top"
@@ -18,7 +19,7 @@
       <slot name="top"></slot>
     </div>
 
-    <p v-if="$slots.title" class="text-xl mb-8">
+    <p v-if="$slots.title" class="text-2xl mb-8 leading-[120%]">
       <slot name="title"></slot>
     </p>
 

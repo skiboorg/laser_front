@@ -11,9 +11,11 @@ const {data:news} =  useAsyncData(()=>$api.blank.news(true))
 </script>
 <template>
   <BlockOffer
+      bg_video="/video.mp4"
       title="Продлеваем ресурс критических деталей с помощью лазерных технологий наплавки и упрочнения"
       subtitle="Минимизируем простой оборудования, снижаем стоимость ремонта и повышаем надежность производственных процессов."
       :tags="['Прочность без компромиссов','Инновации, которым доверяют детали']"
+      :no_button="true"
   />
 
   <BlockSection :show_title="true" title="Наши услуги" small_title="Услуги">
@@ -35,7 +37,7 @@ const {data:news} =  useAsyncData(()=>$api.blank.news(true))
     </div>
   </BlockSection>
   <BlockSection :show_title="true" title="Виды оборудования" small_title="Оборудование" sub_title="У нас представлен ассортимент оборудования, который мы можем адаптировать под ваши запросы, вы можете оформить заявку на его приобретение на нашем сайте.">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5">
       <CardEquipment v-for="equipment in equipments?.results" :equipment="equipment"/>
     </div>
   </BlockSection>
@@ -53,6 +55,7 @@ const {data:news} =  useAsyncData(()=>$api.blank.news(true))
 
     </div>
   </BlockSection>
+  <PageBlockPartners/>
   <BlockSection :show_title="true" title="Новости компании" small_title="Новости" >
     <template #extra>
       <nuxt-link to="/news">

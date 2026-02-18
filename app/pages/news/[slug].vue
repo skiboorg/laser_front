@@ -11,7 +11,7 @@ const {data} = await useAsyncData(()=>$api.blank.news_item(route.params.slug))
 <template>
   <div class="container">
 
-      <div class="flex gap-2 mb-5 text-[#9F9F9F]">
+      <div class="flex flex-wrap gap-2 mb-10 text-[#9F9F9F]">
         <nuxt-link to="/">Главная</nuxt-link>
         /
         <nuxt-link to="/news">Новости</nuxt-link>
@@ -19,8 +19,8 @@ const {data} = await useAsyncData(()=>$api.blank.news_item(route.params.slug))
         <span>{{data.name}}</span>
       </div>
 
-    <div class="grid grid-cols-12 gap-10">
-      <div class="col-span-12 md:col-span-8">
+    <div class="block mb-10 md:mb-0 md:grid grid-cols-12 gap-10">
+      <div class="col-span-12 md:col-span-8 mb-10 md:mb-0 ">
 
 
         <div class="flex items-center flex-wrap gap-3 mb-5">
@@ -33,7 +33,9 @@ const {data} = await useAsyncData(()=>$api.blank.news_item(route.params.slug))
         <h1 class="text-4xl mb-10">{{data.name}}</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
           <div v-for="i in data.images" class="">
-            <img  :src="i.image" alt="">
+            <div class="aspect-video w-full">
+              <img class="w-full h-full object-cover" :src="i.image" alt="">
+            </div>
           </div>
         </div>
         <div class="html-content" v-html="data.content"></div>

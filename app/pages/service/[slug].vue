@@ -7,6 +7,15 @@ const {slug} = useRoute().params
 const {$api} = useNuxtApp()
 const {data:service} = await useAsyncData(()=>$api.blank.service(slug))
 
+const steps = [
+  {title:'Предварительный выезд и сбор требований', text:'Анализ детали, геометрии, рабочих условий, требуемых свойств и ограничений. Определение допусков по размеру'},
+  {title:'Подготовка', text:'Очистка поверхности, удаление загрязнений и обезжиривание. Локальная подготовка (шлифовка, зачищение). Нанесение защитных слоев вблизи зоны наплавки.'},
+  {title:'Настройка оборудования', text:'Выбор лазера, мощности, скорости сканирования и диаметра луча. Подбор присадочного материала и подачной схемы. Настройка системы охлаждения и преднагрева (если требуется)'},
+  {title:'Процесс наплавки', text:'Локальное плавление присадочного материала и частично основания: Формирование слоев по заданной геометрии, контроль толщины.'},
+  {title:'Контроль качества', text:'Осмотр, дефектоскопия, измерение геометрии, контроль деформаций, тесты твердости.'},
+  {title:'Постобработка', text:'Термообработка, шлифовка, покраска'},
+]
+
 
 </script>
 <template>
@@ -34,7 +43,7 @@ const {data:service} = await useAsyncData(()=>$api.blank.service(slug))
 
   <BlockSection :show_title="true" :title="service.title" small_title="Преимущества">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-      <CardInfo v-for="item,index  in service.advantages">
+      <CardInfo v-for="item,index  in service.advantages" :no_hover="true">
         <template #top>
           0{{index+1}}
         </template>
@@ -46,27 +55,19 @@ const {data:service} = await useAsyncData(()=>$api.blank.service(slug))
     </div>
   </BlockSection>
   <BlockSection :show_title="false" class="text-white py-[120px]" style="background-image: url(/video.jpg)">
-
-
     <p  class="mb-5 " >Сферы</p>
-    <h2 class="text-3xl md:text-4xl pb-10 md:pb-[60px] border-b border-[#B4B2B2] mb-10" >Отрасли применения</h2>
-
+    <h2 class="text-3xl md:text-4xl pb-6 md:pb-10 border-b border-[#B4B2B2] mb-6 md:mb-10" >Отрасли применения</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-      <div v-for="item in service.industries" class="border border-white px-5 py-7 h-[320px] flex flex-col">
+      <div v-for="item in service.industries" class="border border-white p-5  h-[320px] flex flex-col bg-white/10 backdrop-blur-sm">
         <div class="flex items-center justify-between">
           <p class="text-2xl">{{item.name}}</p>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="12" height="12" fill="white"/>
           </svg>
-
         </div>
         <p class="mt-auto">{{item.description}}</p>
       </div>
-
-
     </div>
-
-
   </BlockSection>
   <BlockSection :show_title="true" title="Технические характеристики" small_title="Характеристики" >
     <template #extra>
@@ -80,21 +81,15 @@ const {data:service} = await useAsyncData(()=>$api.blank.service(slug))
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="12" height="12" fill="#1E37A3"/>
             </svg>
-
-
           </div>
           <div class="html-content" v-html="item.content"> </div>
         </div>
       </div>
     </div>
-
-
-
-
   </BlockSection>
   <BlockSection :show_title="true" title="Этапы работы" small_title="Этапы">
     <div
-        v-for="(item, index) in 3"
+        v-for="(item, index) in steps"
         :key="index"
         class="flex flex-col items-start md:grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-0 pb-8 border-b border-[#E0E0E0] mb-8 md:items-center"
     >
@@ -103,16 +98,9 @@ const {data:service} = await useAsyncData(()=>$api.blank.service(slug))
       </div>
 
       <div class="col-span-12 md:col-span-4">
-        <p class="text-2xl text-primary max-w-[80%]" >
-          Предварительный выезд и сбор требований
-        </p>
-
-
+        <p class="text-2xl text-primary max-w-[80%]" >{{item.title}}</p>
       </div>
-
-      <div class="col-span-12 md:col-span-6 md:max-w-[80%] ">
-        Анализ детали, геометрии, рабочих условий, требуемых свойств и ограничений. Определение допусков по размеру
-      </div>
+      <div class="col-span-12 md:col-span-6 md:max-w-[90%] ">{{item.text}}</div>
     </div>
   </BlockSection>
   <BlockSection :show_title="true" title="Реализованные проекты" small_title="Оборудование" >

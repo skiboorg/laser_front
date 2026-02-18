@@ -5,7 +5,7 @@ defineProps(['project'])
 <template>
 <div class="">
 
-  <div class="flex flex-wrap gap-2 mb-8">
+  <div class="flex flex-wrap gap-2 mb-7">
     <p class="px-3 py-2 bg-[#E8EBF6]" v-for="tag in project.tags_list" :key="tag.name">
       {{tag}}
     </p>
@@ -13,14 +13,12 @@ defineProps(['project'])
 
   </div>
 
-  <p class=" text-2xl mb-8 max-w-[80%]">{{project.title}}</p>
+  <p class=" text-2xl mb-7 max-w-[80%]">{{project.title}}</p>
 
-  <div class="flex gap-4 mb-8">
+  <div class="flex gap-4 mb-7">
     <nuxt-link class="link black" :to="`/project/${project.slug}`">Подробнее</nuxt-link>
-
   </div>
   <img class="w-full object-cover h-[370px]" :src="project.image" alt="">
-
 
 </div>
 </template>

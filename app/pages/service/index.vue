@@ -14,7 +14,7 @@ const {data:services} = await useAsyncData(()=>$api.blank.services())
       <span>Наши услуги</span>
     </div>
   </div>
-  <BlockSection :show_title="true" title="Наши услуги" >
+  <BlockSection :no_border="true" :show_title="true" title="Наши услуги" >
 
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
       <CardInfo v-for="service in services.results" :key="service.id" >
