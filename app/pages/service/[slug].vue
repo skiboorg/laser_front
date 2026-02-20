@@ -6,7 +6,10 @@
 const {slug} = useRoute().params
 const {$api} = useNuxtApp()
 const {data:service} = await useAsyncData(()=>$api.blank.service(slug))
-
+useSeoMeta({
+  title: service.value.ment_title || service.value.title,
+  description:service.value.meta_description || service.value.meta_description
+})
 const steps = [
   {title:'Предварительный выезд и сбор требований', text:'Анализ детали, геометрии, рабочих условий, требуемых свойств и ограничений. Определение допусков по размеру'},
   {title:'Подготовка', text:'Очистка поверхности, удаление загрязнений и обезжиривание. Локальная подготовка (шлифовка, зачищение). Нанесение защитных слоев вблизи зоны наплавки.'},
@@ -15,7 +18,16 @@ const steps = [
   {title:'Контроль качества', text:'Осмотр, дефектоскопия, измерение геометрии, контроль деформаций, тесты твердости.'},
   {title:'Постобработка', text:'Термообработка, шлифовка, покраска'},
 ]
+function vkIframeUrl(link: string) {
+  // Пример link: https://vkvideo.ru/video-93042683_456240169
+  const match = link.match(/video-?(\d+)_?(\d+)/);
+  if (!match) return '';
 
+  const oid = `-${match[1]}`;  // ставим минус перед oid
+  const id = match[2];
+
+  return `https://vkvideo.ru/video_ext.php?oid=${oid}&id=${id}&autoplay=0`;
+}
 
 </script>
 <template>
@@ -34,8 +46,16 @@ const steps = [
         <div class="mt-10 max-w-[90%]" v-html="service.description">
         </div>
       </div>
-      <div class="">
-        <img class="w-full object-cover h-full" src="https://placehold.co/600x400" alt="">
+      <div class="" v-if="service.show_video">
+        <iframe
+            :src="vkIframeUrl(service.vk_video)"
+            width="100%"
+            height="300px"
+            style="background-color: #000"
+            allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
       </div>
 
     </div>

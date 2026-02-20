@@ -3,6 +3,8 @@
 //   guest: true,
 //   layout: 'auth'
 //
+const {$api} = useNuxtApp()
+const {data} = await useAsyncData(()=>$api.blank.team())
 const features = [
   {title:'Своя исследовательская лаборатория', description:'Описание 1',class:''},
   {title:'Сертифицированное оборудование', description:'Описание 1',class:'!bg-[#F1F3FA] !border-[#D0D4E3]'},
@@ -89,11 +91,11 @@ const mission = [
   </BlockSection>
   <BlockSection :show_title="true" title="Команда E-Laser" small_title="Команда">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-      <div v-for="i in 8" class="">
-        <img  class="w-full h-[360px] object-cover " src="https://placehold.co/600x400" alt="">
+      <div v-for="i in data?.results" class="">
+        <img  class="w-full h-[360px] object-cover " :src="i.photo" alt="">
         <div class="p-5 bg-[#EBEBEB]">
-          <p class="text-[16px] font-medium mb-4">Евгений Михайлович Еремин</p>
-          <p>Евгений Михайлович Еремин</p>
+          <p class="text-[16px] font-medium mb-4">{{i.full_name}}</p>
+          <p>{{i.position}}</p>
         </div>
 
       </div>

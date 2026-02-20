@@ -23,6 +23,9 @@ export function createBlankRepository(appFetch: typeof $fetch){
         reviews(){
             return appFetch(`/api/data/reviews/`);
         },
+        team(){
+            return appFetch(`/api/data/team/`);
+        },
         news(index:boolean = false){
             return appFetch(`/api/data/news/?index=${index}`);
         },

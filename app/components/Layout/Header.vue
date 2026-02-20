@@ -40,13 +40,14 @@ const links = [
 
       <div class="hidden lg:flex items-center gap-8" >
               <div class="">
-                <p><a class="font-medium" href="tel:8 912 000 00 00">8 912 000 00 00</a></p>
-                <p><a class="font-medium" href="mailto:info@e-laser.pro">info@e-laser.pro</a></p>
+                <p><a class="font-medium" href="tel:+73512221777">+7 (351) 222-1-777</a></p>
+                <p><a class="font-medium" href="mailto:zakaz@e-laser.pro">zakaz@e-laser.pro</a></p>
               </div>
-            <Button :severity="is_header_black ? 'primary' : 'secondary'" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>
+        <UIModalButton :is_primary="is_header_black"/>
+<!--            <Button :severity="is_header_black ? 'primary' : 'secondary'" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>-->
       </div>
       <div class="flex lg:hidden items-stretch justify-end gap-2 w-full">
-        <a class="font-medium block" href="tel:8 912 000 00 00">
+        <a class="font-medium block" href="tel:+73512221777">
           <Button class="h-full" outlined :severity="is_header_black ? 'primary' : 'secondary'">
             <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1.37351 0.0519676C0.879644 0.158239 0.438918 0.489554 0.207615 0.933393C0.138849 1.06154 0.0919629 1.16781 0.0982144 1.17094C0.10134 1.17719 1.73297 2.26491 3.7178 3.58705C6.14336 5.20299 7.38739 6.01253 7.49992 6.05316C7.7406 6.13755 8.25947 6.13755 8.50015 6.05316C8.61267 6.01253 9.85671 5.20299 12.2823 3.58705C14.2671 2.26491 15.8987 1.17719 15.9019 1.17094C15.9081 1.16781 15.8612 1.06154 15.7925 0.933393C15.558 0.483304 15.1204 0.155113 14.6109 0.048842C14.2921 -0.0167961 1.68608 -0.0167961 1.37351 0.0519676Z"
@@ -58,7 +59,7 @@ const links = [
 
           </Button>
         </a>
-        <a class="font-medium block" href="tel:8 912 000 00 00">
+        <a class="font-medium block" href="mailto:zakaz@e-laser.pro">
           <Button class="h-full" outlined :severity="is_header_black ? 'primary' : 'secondary'">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.26198 0.0478115C2.09323 0.107186 1.90573 0.269687 1.22448 0.944687C0.471357 1.69156 0.277607 1.98531 0.0994824 2.65406C-0.00676759 3.05406 -0.0317676 3.87281 0.0432324 4.38844C0.352607 6.46656 1.88698 9.09781 4.14011 11.4009C6.68698 14.0072 9.45573 15.6697 11.7339 15.9697C12.1839 16.0291 12.9807 15.9916 13.3432 15.8947C14.0151 15.7166 14.3057 15.5259 15.0526 14.7728C15.9526 13.8634 15.9995 13.7947 15.9995 13.3416C15.9995 12.9134 16.0089 12.9259 14.3995 11.3228C12.7995 9.72906 12.8839 9.79469 12.4057 9.79469C12.0151 9.79781 11.9307 9.84781 11.3089 10.4541C10.7682 10.9822 10.6276 11.0822 10.2901 11.1697C9.76198 11.3072 9.34011 11.1634 8.35886 10.5134C7.74948 10.1072 7.30886 9.74781 6.78073 9.21656C6.24948 8.68844 5.89011 8.24781 5.48386 7.63844C4.83386 6.65719 4.69011 6.23531 4.82761 5.70719C4.91511 5.36656 5.01511 5.22594 5.54323 4.68531C6.12761 4.09156 6.19011 3.98844 6.21198 3.62594C6.22136 3.43531 6.21198 3.35094 6.15573 3.20094C6.09011 3.02281 6.01198 2.93844 4.67448 1.59781C3.05886 -0.0240631 3.08386 -0.00531387 2.64323 0.000936508C2.50261 0.000936508 2.33386 0.0228119 2.26198 0.0478115Z"

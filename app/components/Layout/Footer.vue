@@ -42,15 +42,16 @@ const links = [
 
           <p class="my-4 text-xs">Инжиниринговая компания в сфере<br>лазерной наплавки и упрочнения</p>
           <p class="mb-4 text-xs">г. Челябинск, Пр-кт Ленина, д. 83, этаж 4</p>
-          <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>
+          <UIModalButton :is_primary="true"/>
+
         </div>
 
         <div class="col-span-9 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-0">
           <div class="col-span-12 md:col-span-4">
             <p class="text-[16px] font-medium mb-8">Контакты</p>
             <div class="space-y-4">
-              <a class="block text-[28px]" href="mailto:info@e-laser.pro">info@e-laser.pro</a>
-              <a class="block text-[28px]" href="tel:+7 (912) 000 00 00">+7 (912) 000 00 00</a>
+              <a class="block text-[28px]" href="mailto:zakaz@e-laser.pro">zakaz@e-laser.pro</a>
+              <a class="block text-[28px]" href="tel:+73512221777">+7 (351) 222-1-777</a>
             </div>
 
 

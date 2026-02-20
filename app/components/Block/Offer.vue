@@ -17,8 +17,7 @@ const props = defineProps(['tags','title','subtitle','bg_image','bg_video','no_b
         <UIOutlineBtn v-if="!no_button" label="Бесплатная консультация"/>
    </div>
       <div v-else class="grid grid-cols-1 md:flex  gap-2">
-
-        <Button  severity="secondary" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>
+        <UIModalButton :is_primary="false"/>
         <UIOutlineBtn v-if="!no_button" label="Бесплатная консультация"/>
      </div>
 
