@@ -9,7 +9,7 @@ const {data} = await useAsyncData(()=>$api.blank.news_item(route.params.slug))
 </script>
 
 <template>
-  <div class="container">
+  <div class="container pb-10">
 
       <div class="flex flex-wrap gap-2 mb-10 text-[#9F9F9F]">
         <nuxt-link to="/">Главная</nuxt-link>

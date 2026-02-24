@@ -69,7 +69,10 @@ const mission = [
                 sub_title="Мы решаем сложнейшие инженерные задачи по ремонту и модернизации промышленного оборудования наших заказчиков благодаря использованию современных лазерных технологий и индивидуальному подходу. Повышаем запас прочности российской промышленности."
   >
     <template #extra>
-      <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Скачать презентацию"/>
+      <a href="/doc.pdf" target="_blank" download="">
+        <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Скачать презентацию"/>
+      </a>
+
     </template>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
       <div
@@ -79,7 +82,7 @@ const mission = [
          px-5 py-7
          border border-[#E0E0E0]
          transition-colors
-         bg-white hover:bg-[#D0D4E3] hover:border-[#D0D4E3]
+         bg-white
          "
       >
         <p v-html="item.icon"></p>
@@ -94,7 +97,7 @@ const mission = [
       <div v-for="i in data?.results" class="">
         <img  class="w-full h-[360px] object-cover " :src="i.photo" alt="">
         <div class="p-5 bg-[#EBEBEB]">
-          <p class="text-[16px] font-medium mb-4">{{i.full_name}}</p>
+          <p class="text-[16px] font-medium mb-1">{{i.full_name}}</p>
           <p>{{i.position}}</p>
         </div>
 

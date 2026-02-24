@@ -7,7 +7,7 @@ defineProps(["item","index"])
     <div class="hidden md:block col-span-1">0{{index+1}}</div>
     <div class="col-span-12 md:col-span-4">
       <div class="aspect-video w-full">
-        <img class="w-full h-full object-cover" :src="item.cover" alt="">
+        <img class="w-full h-auto md:w-[433px] md:h-[275px] object-cover" :src="item.cover" alt="">
       </div>
 <!--      <img class="w-full object-cover h-full" :src="item.cover" alt="">-->
     </div>
@@ -24,13 +24,13 @@ defineProps(["item","index"])
       <nuxt-link :to="`/news/${item.slug}`"><p class="text-2xl mb-8">{{item.name}}</p></nuxt-link>
 
       <p class="mb-8 leading-[150%]">{{item.short_description}}</p>
-      <div class="flex gap-3">
-        <img class="w-10 h-10 object-cover rounded-full" :src="item.photo" alt="">
-        <div class="">
-          <p class="font-medium">{{item.full_name}}</p>
-          <p class="text-[#9F9F9F]">{{item.position}}</p>
-        </div>
-      </div>
+<!--      <div class="flex gap-3">-->
+<!--        <img class="w-10 h-10 object-cover rounded-full" :src="item.photo" alt="">-->
+<!--        <div class="">-->
+<!--          <p class="font-medium">{{item.full_name}}</p>-->
+<!--          <p class="text-[#9F9F9F]">{{item.position}}</p>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
   </div>
 </template>

@@ -18,15 +18,18 @@ const {data:projects} = useAsyncData(()=>$api.blank.projects())
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       <div class="" v-for="project in projects?.results">
-        <img class="w-full object-cover h-[370px]" :src="project.image" alt="">
+        <div class="aspect-video w-full">
+          <img class="w-full h-auto md:w-[433px] md:h-[275px] object-cover" :src="project.image" alt="">
+        </div>
+<!--        <img class="w-full object-cover h-[370px]" :src="project.image" alt="">-->
         <div class="px-4 py-6 border-l border-r border-b  border-[#E0E0E0]">
-          <div class="flex flex-wrap gap-2 mb-8">
+          <div class="flex flex-wrap gap-2 mb-6">
             <p class="px-3 py-[6px] bg-[#E8EBF6]" v-for="tag in project.tags_list" :key="tag.name">
               {{tag}}
             </p>
           </div>
-          <p class=" text-2xl mb-8 max-w-[80%]">{{project.title}}</p>
-          <div class="flex gap-4 mb-8">
+          <p class=" text-xl mb-8 ">{{project.title}}</p>
+          <div class="flex gap-4 ">
             <nuxt-link class="link black" :to="`/project/${project.slug}`">Подробнее</nuxt-link>
           </div>
         </div>

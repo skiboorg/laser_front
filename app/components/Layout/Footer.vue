@@ -48,7 +48,7 @@ const links = [
 
         <div class="col-span-9 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-0">
           <div class="col-span-12 md:col-span-4">
-            <p class="text-[16px] font-medium mb-8">Контакты</p>
+            <p class="text-[14px] font-medium mb-8">Контакты</p>
             <div class="space-y-4">
               <a class="block text-[28px]" href="mailto:zakaz@e-laser.pro">zakaz@e-laser.pro</a>
               <a class="block text-[28px]" href="tel:+73512221777">+7 (351) 222-1-777</a>
@@ -57,19 +57,19 @@ const links = [
 
           </div>
           <div class="col-span-12 md:col-span-2">
-            <p class="text-[16px] font-medium mb-8">Компания</p>
+            <p class="text-[14px] font-medium mb-8">Компания</p>
             <div class="space-y-3">
               <nuxt-link class="block text-xs text-[#9F9F9F]" v-for="item in links" :to="`/service/${item.to}`">{{item.label}}</nuxt-link>
             </div>
           </div>
           <div class="col-span-12 md:col-span-2">
-            <p class="text-[16px] font-medium mb-8">Услуги</p>
+            <p class="text-[14px] font-medium mb-8">Услуги</p>
             <div class="space-y-3">
               <nuxt-link class="block text-xs text-[#9F9F9F]" v-for="item in services?.results" :to="`/service/${item.slug}`">{{item.title}}</nuxt-link>
             </div>
           </div>
           <div class="col-span-12 md:col-span-4">
-            <p class="text-[16px] font-medium mb-8">Оборудование</p>
+            <p class="text-[14px] font-medium mb-8">Оборудование</p>
             <div class="space-y-3">
               <nuxt-link class="block text-xs text-[#9F9F9F]" v-for="item in equipments?.results" :to="`/equipment/${item.slug}`">{{item.title}}</nuxt-link>
             </div>
@@ -79,9 +79,14 @@ const links = [
 
 
       </div>
-      <div class="flex justify-between pb-8 text-[#7B7B7B]">
-        <p>© 2026 ЦЛТ «Урал». Все права защищены.</p>
-        <p>Политика конфиденциальности</p>
+      <div class="flex justify-between pb-8 text-[#7B7B7B] text-xs">
+        <p >© 2026 ЦЛТ «Урал». Все права защищены.</p>
+        <div class="flex flex-wrap gap-3">
+          <p>Политика конфиденциальности</p>
+          <a href="https://t.me/vkryaz" target="_blank" class="underline"><p>Разработка сайта</p></a>
+
+        </div>
+
       </div>
     </div>
   </footer>

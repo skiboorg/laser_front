@@ -3,7 +3,8 @@
 </script>
 
 <template>
-  <BlockSection :show_title="false" class="text-white py-[88px] md:py-[120px]" style="background-image: url(/video.jpg)">
+  <BlockSection :show_title="false" class="text-white py-[88px] md:py-[120px]"
+                style="background-image: url(/about.png); background-size: cover;">
 
 
     <p  class="mb-5 " >Информация</p>
@@ -20,7 +21,7 @@
           Экономические<br>и операционные преимущества
         </p>
         <p>
-          Продление ресурса деталей и снижения себестоимости ремонта за счет реконструкции, а не замены узлов.
+          Продление ресурса деталей и снижения себестоимости ремонта за счет<br> реконструкции, а не замены узлов.
         </p>
       </div>
       <div class="hidden md:block col-span-3">
@@ -36,23 +37,24 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-0">
       <div class="border-b border-[#B4B2B2] md:border-none pb-6 md:pb-0">
         <p class="mb-[60px] md:mb-20">01</p>
-        <p class="text-[60px] md:text-[100px] mb-10">1 200</p>
-        <p>Площадь аддитивного производства<br> и склада с лазерным оборудованием</p>
+        <p class="text-[60px] md:text-[100px] mb-11 font-light">1 200</p>
+        <p>Площадь аддитивного производства<br> и склада с лазерным оборудованием <br>в
+          <a target="_blank" class="underline" href="https://promparks.ru/greenpolis-industrialnyy-park/">Индустриальном парке «Гринполис»</a></p>
       </div>
       <div class="border-b border-[#B4B2B2] md:border-none pb-6 md:pb-0">
         <p class="mb-[60px] md:mb-20">02</p>
-        <p class="text-[60px] md:text-[100px] mb-10">2</p>
+        <p class="text-[60px] md:text-[100px] mb-11 font-light">2</p>
         <p>Единицы высокоточных<br>лазерных установки</p>
       </div>
       <div class="border-b border-[#B4B2B2] md:border-none pb-6 md:pb-0">
         <p class="mb-[60px] md:mb-20">03</p>
-        <p class="text-[60px] md:text-[100px] mb-10">1</p>
+        <p class="text-[60px] md:text-[100px] mb-11 font-light">1</p>
         <p>Сертифицированная опытно-исследовательская лаборатория</p>
       </div>
       <div class="border-b border-[#B4B2B2] md:border-none pb-6 md:pb-0">
         <p class="mb-[60px] md:mb-20">04</p>
-        <p class="text-[60px] md:text-[100px] mb-10">15</p>
-        <p>Команда инженеров по материаловедению и<br> технологов лазерной обработки</p>
+        <p class="text-[60px] md:text-[100px] mb-11 font-light">15</p>
+        <p>Команда инженеров по материаловедению <br>и технологов лазерной обработки</p>
       </div>
     </div>
 

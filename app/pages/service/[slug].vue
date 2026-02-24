@@ -57,6 +57,9 @@ function vkIframeUrl(link: string) {
             allowfullscreen
         ></iframe>
       </div>
+      <div v-else class="">
+        <img :src="service.description_image" alt="">
+      </div>
 
     </div>
   </BlockSection>
@@ -65,7 +68,8 @@ function vkIframeUrl(link: string) {
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
       <CardInfo v-for="item,index  in service.advantages" :no_hover="true">
         <template #top>
-          0{{index+1}}
+          <p class="text-primary">      0{{index+1}}</p>
+
         </template>
         <template #title>{{item.title}}</template>
         <template #text>
@@ -78,7 +82,8 @@ function vkIframeUrl(link: string) {
     <p  class="mb-5 " >Сферы</p>
     <h2 class="text-3xl md:text-4xl pb-6 md:pb-10 border-b border-[#B4B2B2] mb-6 md:mb-10" >Отрасли применения</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-      <div v-for="item in service.industries" class="border border-white p-5  h-[320px] flex flex-col bg-white/10 backdrop-blur-sm">
+      <div v-for="item in service.industries"
+           class="border border-white p-5  h-[320px] flex flex-col bg-white/10 backdrop-blur-sm">
         <div class="flex items-center justify-between">
           <p class="text-2xl">{{item.name}}</p>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">

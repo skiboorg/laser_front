@@ -9,7 +9,7 @@ const {data} = await useAsyncData(()=>$api.blank.project(route.params.slug))
 </script>
 
 <template>
-  <div class="container">
+  <div class="container pb-10">
     <div class="flex flex-wrap gap-2 mb-5 text-[#9F9F9F]">
       <nuxt-link to="/">Главная</nuxt-link>/
       <nuxt-link to="/project">Наши проекты</nuxt-link>/
@@ -26,7 +26,7 @@ const {data} = await useAsyncData(()=>$api.blank.project(route.params.slug))
           </p>
 
         </div>
-        <h1 class="text-4xl mb-10">{{data.title}}</h1>
+        <h1 class="text-4xl mb-10 w-full md:max-w-[80%]">{{data.title}}</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
           <div v-for="i in data.project_images" class="">
 

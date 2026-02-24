@@ -8,9 +8,8 @@ const props = defineProps(['tags','title','subtitle','bg_image','bg_video','no_b
       <!--     <div class="h-full w-[1px] border-l border-[#525252] absolute left-[20%]"></div>-->
       <div v-if="tags" class="flex flex-wrap gap-2 mb-10">
         <UIBadge v-for="tag in tags">{{tag}}</UIBadge>
-
       </div>
-      <p class="text-white text-3xl md:text-5xl mb-10 leading-[140%]">{{title}}</p>
+      <p class="text-white text-3xl md:text-5xl mb-10 leading-[110%] lg:leading-[100%] max-w-[85%] md:max-w-full">{{title}}</p>
       <p class="text-white max-w-[470px] text-[16px] mb-24 leading-[150%]" v-html="subtitle"></p>
       <div v-if="alt_buttons" class="flex flex-wrap gap-2">
         <Button severity="secondary" icon="pi pi-plus" icon-pos="right" label="Запросить стоимость"/>

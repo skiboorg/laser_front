@@ -11,7 +11,8 @@
        <UIBadge>Новая технология упрочнения</UIBadge>
        <UIBadge>Любые металлы</UIBadge>
      </div>
-     <p class="text-white text-3xl md:text-5xl mb-10">Продлеваем ресурс критических деталей с помощью лазерных технологий наплавки и упрочнения</p>
+
+     <p class="text-white text-xl md:text-5xl mb-5 md:mb-10">Продлеваем ресурс критических деталей с помощью лазерных технологий наплавки и упрочнения</p>
      <p class="text-white max-w-[370px] text-[16px] mb-24">Минимизируем простой оборудования, снижаем стоимость ремонта и повышаем надежность производственных процессов.</p>
       <div class="flex gap-3">
         <Button severity="secondary" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>

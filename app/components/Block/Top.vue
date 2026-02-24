@@ -23,13 +23,13 @@ const props = defineProps({
 </script>
 
 <template>
+<!--  `height: ${props.h}`-->
   <section
       :style="[
       !props.bg_video ? `background-image: url(${props.bg_image})` : '',
-      `background-color: ${props.bg_color}`,
-      `height: ${props.h}`
+
     ]"
-      class="relative z-10 bg-cover mb-[88px] md:mb-[120px]"
+      class="relative z-10 bg-cover mb-[88px] md:mb-[120px] h-svh min-h-[740px] md:h-[864px]"
   >
     <!-- Фоновое видео -->
     <video
@@ -43,10 +43,10 @@ const props = defineProps({
     />
 
     <!-- Цветовой оверлей -->
-    <div
-        :style="`background-color: ${props.bg_color}`"
-        class="absolute inset-0 -z-10"
-    />
+<!--    <div-->
+<!--        :style="`background-color: ${props.bg_color}`"-->
+<!--        class="absolute inset-0 -z-10"-->
+<!--    />-->
 
     <div class="container h-full relative z-10">
       <slot></slot>
