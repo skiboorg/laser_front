@@ -5,7 +5,7 @@ defineProps(['no_hover'])
 <template>
 
   <div
-      :class="[$slots.bottom ? 'h-[360px]' :'h-auto md:h-[320px]',no_hover ? '' : 'hover:bg-[#F1F3FA] hover:border-[#F1F3FA]']"
+      :class="[$slots.bottom ? 'h-[420px]' :'h-auto md:h-[320px]',no_hover ? '' : 'hover:bg-[#F1F3FA] hover:border-[#F1F3FA]']"
       class="group flex flex-col
          px-5 py-7
          border border-[#E0E0E0]
@@ -25,10 +25,8 @@ defineProps(['no_hover'])
 
     <p
         v-if="$slots.text"
-        :class="$slots.bottom ? 'mb-8' :'mt-auto'"
-        class="text-[#9F9F9F]
-           group-hover:text-[#7680A1] transition-colors"
-    >
+        :class="[$slots.bottom ? 'mb-8' :'mt-auto', no_hover ? '' : 'group-hover:text-[#7680A1] transition-colors']"
+        class="text-[#9F9F9F]">
       <slot name="text"></slot>
     </p>
 

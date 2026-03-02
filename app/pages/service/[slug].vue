@@ -78,7 +78,7 @@ function vkIframeUrl(link: string) {
       </CardInfo>
     </div>
   </BlockSection>
-  <BlockSection :show_title="false" class="text-white py-[120px]" style="background-image: url(/video.jpg)">
+  <BlockSection :show_title="false" class="text-white py-[120px]" style="background-image: url(/bg_otr.png)">
     <p  class="mb-5 " >Сферы</p>
     <h2 class="text-3xl md:text-4xl pb-6 md:pb-10 border-b border-[#B4B2B2] mb-6 md:mb-10" >Отрасли применения</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">

@@ -30,14 +30,8 @@ const {data:news} =  useAsyncData(()=>$api.blank.news(false))
           <div class="text-2xl mb-6" >
             <nuxt-link :to="'/news/'+item.slug">{{item.name}}</nuxt-link>
           </div>
-          <div class="mb-8" v-html="item.short_description"></div>
-          <div class="flex gap-3">
-            <img class="w-10 h-10 object-cover rounded-full" :src="item.photo" alt="">
-            <div class="">
-              <p class="font-medium">{{item.full_name}}</p>
-              <p class="text-[#9F9F9F]">{{item.position}}</p>
-            </div>
-          </div>
+          <div class="" v-html="item.short_description"></div>
+
         </div>
 
       </div>

@@ -16,7 +16,7 @@ const links = [
   {label:'О компании',to:'/about'},
   {label:'Наши проекты',to:'/project'},
   {label:'Новости',to:'/news'},
-  {label:'Контакты',to:'/'},
+  // {label:'Контакты',to:'/'},
 
 ]
 </script>
@@ -24,10 +24,10 @@ const links = [
 <template>
   <footer class="border-t border-[#E2E4E9]">
     <div class="container">
-      <div class="grid grid-cols-1 md:grid-cols-12 border-b border-[#E0E0E0] py-10 mb-8 gap-4 md:gap-0">
+      <div class="block md:grid grid-cols-1 md:grid-cols-12 border-b border-[#E0E0E0] py-10 mb-8 gap-4 md:gap-0 ">
 
 
-        <div class="col-span-3">
+        <div class="col-span-3 mb-10 md:mb-0">
           <svg width="120" height="17" viewBox="0 0 120 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 2.77303V6.01869H1.7379L3.87924 3.56081H15.0515L15.9514 2.64698V3.05176e-05H2.45168L0 2.77303Z" fill="#498FFF"/>
             <path d="M4.01149 6.20869L0.0625 10.8164V16.282H16.0139V12.4688H2.70553L5.22417 9.89484H16.0139V6.20869H4.01149Z" fill="#1E37A3"/>
@@ -46,9 +46,9 @@ const links = [
 
         </div>
 
-        <div class="col-span-9 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-0">
+        <div class="col-span-9 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-0">
           <div class="col-span-12 md:col-span-4">
-            <p class="text-[14px] font-medium mb-8">Контакты</p>
+            <p class="text-[14px] font-medium mb-4 md:mb-8">Контакты</p>
             <div class="space-y-4">
               <a class="block text-[28px]" href="mailto:zakaz@e-laser.pro">zakaz@e-laser.pro</a>
               <a class="block text-[28px]" href="tel:+73512221777">+7 (351) 222-1-777</a>
@@ -57,19 +57,19 @@ const links = [
 
           </div>
           <div class="col-span-12 md:col-span-2">
-            <p class="text-[14px] font-medium mb-8">Компания</p>
+            <p class="text-[14px] font-medium mb-4 md:mb-8">Компания</p>
             <div class="space-y-3">
-              <nuxt-link class="block text-xs text-[#9F9F9F]" v-for="item in links" :to="`/service/${item.to}`">{{item.label}}</nuxt-link>
+              <nuxt-link class="block text-xs text-[#9F9F9F]" v-for="item in links" :to="`${item.to}`">{{item.label}}</nuxt-link>
             </div>
           </div>
           <div class="col-span-12 md:col-span-2">
-            <p class="text-[14px] font-medium mb-8">Услуги</p>
+            <p class="text-[14px] font-medium mb-4 md:mb-8">Услуги</p>
             <div class="space-y-3">
               <nuxt-link class="block text-xs text-[#9F9F9F]" v-for="item in services?.results" :to="`/service/${item.slug}`">{{item.title}}</nuxt-link>
             </div>
           </div>
           <div class="col-span-12 md:col-span-4">
-            <p class="text-[14px] font-medium mb-8">Оборудование</p>
+            <p class="text-[14px] font-medium mb-4 md:mb-8">Оборудование</p>
             <div class="space-y-3">
               <nuxt-link class="block text-xs text-[#9F9F9F]" v-for="item in equipments?.results" :to="`/equipment/${item.slug}`">{{item.title}}</nuxt-link>
             </div>
@@ -79,11 +79,11 @@ const links = [
 
 
       </div>
-      <div class="flex justify-between pb-8 text-[#7B7B7B] text-xs">
+      <div class="block md:flex justify-between pb-8 text-[#7B7B7B] text-xs space-y-2 md:space-y-0">
         <p >© 2026 ЦЛТ «Урал». Все права защищены.</p>
-        <div class="flex flex-wrap gap-3">
+        <div class="block md:flex flex-wrap gap-3 space-y-2 md:space-y-0">
           <p>Политика конфиденциальности</p>
-          <a href="https://t.me/vkryaz" target="_blank" class="underline"><p>Разработка сайта</p></a>
+          <a  href="https://t.me/vkryaz" target="_blank" class="inline-block underline"><p>Разработка сайта</p></a>
 
         </div>
 

@@ -17,9 +17,11 @@ const props = defineProps(['tags','title','subtitle','bg_image','bg_video','no_b
    </div>
       <div v-else class="grid grid-cols-1 md:flex  gap-2">
         <UIModalButton :is_primary="false"/>
-        <UIOutlineBtn v-if="!no_button" label="Бесплатная консультация"/>
-     </div>
+        <a href="tel:+73512221777" v-if="!no_button">
+          <UIOutlineBtn  label="Бесплатная консультация"/>
+        </a>
 
+     </div>
     </div>
   </BlockTop>
 

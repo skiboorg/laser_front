@@ -13,7 +13,9 @@ defineProps(['equipment'])
   <p class="max-w-full md:max-w-[85%] mb-8">{{equipment.short_description}}</p>
   <div class="flex gap-4 mb-8">
     <nuxt-link class="link" :to="`/equipment/${equipment.slug}`">Подробнее</nuxt-link>
-    <p class="link">Запросить стоимость</p>
+    <a href="mailto:zakaz@e-laser.pro" >
+      <p class="link">Запросить стоимость</p>
+    </a>
   </div>
   <div class="aspect-video w-full mb-10 md:mb-0">
     <img class="w-full h-full object-cover" :src="equipment.main_image" alt="">
@@ -23,4 +25,3 @@ defineProps(['equipment'])
 
 </div>
 </template>
-e>

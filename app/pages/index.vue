@@ -50,7 +50,7 @@ const {data:news} =  useAsyncData(()=>$api.blank.news(true))
       </nuxt-link>
 
     </template>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 ">
       <CardReleasedProject v-for="project in projects?.results" :project="project"/>
 
     </div>
