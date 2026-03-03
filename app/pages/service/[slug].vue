@@ -3,6 +3,18 @@
 //   guest: true,
 //   layout: 'auth'
 // })
+import { useBreakpoints } from '@vueuse/core'
+
+const breakpoints = useBreakpoints({
+  mobile: 0, // optional
+  tablet: 640,
+  laptop: 1024,
+  desktop: 1280,
+})
+
+
+const activeBreakpoint = breakpoints.active()
+
 const {slug} = useRoute().params
 const {$api} = useNuxtApp()
 const {data:service} = await useAsyncData(()=>$api.blank.service(slug))
@@ -28,11 +40,14 @@ function vkIframeUrl(link: string) {
 
   return `https://vkvideo.ru/video_ext.php?oid=${oid}&id=${id}&autoplay=0`;
 }
+const is_mobile = computed(()=>{
 
+  return  activeBreakpoint.value === 'mobile' || activeBreakpoint.value === 'tablet'
+})
 </script>
 <template>
   <BlockOffer
-      :bg_image="service.image_background"
+      :bg_image="is_mobile? service.image_background_mobile :service.image_background"
       :title="service.title"
       :subtitle="service.short_description"
       :tags="service.tags_list"

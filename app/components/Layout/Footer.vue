@@ -46,7 +46,7 @@ const links = [
 
         </div>
 
-        <div class="col-span-9 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-0">
+        <div class="flex flex-col col-span-9 md:grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-0">
           <div class="col-span-12 md:col-span-4">
             <p class="text-[14px] font-medium mb-4 md:mb-8">Контакты</p>
             <div class="space-y-4">

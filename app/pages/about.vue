@@ -95,7 +95,10 @@ const mission = [
   <BlockSection :show_title="true" title="Команда E-Laser" small_title="Команда">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
       <div v-for="i in data?.results" class="">
-        <img  class="w-full h-[360px] object-cover " :src="i.photo" alt="">
+        <div class="aspect-video w-full">
+          <img  class="w-full h-auto object-cover " :src="i.photo" alt="">
+        </div>
+
         <div class="p-5 bg-[#EBEBEB]">
           <p class="text-[16px] font-medium mb-1">{{i.full_name}}</p>
           <p>{{i.position}}</p>
