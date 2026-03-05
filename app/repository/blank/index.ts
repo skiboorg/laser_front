@@ -15,7 +15,7 @@ export function createBlankRepository(appFetch: typeof $fetch){
             return appFetch(`/api/data/equipment/${slug}/`);
         },
         projects(index:boolean = false){
-            return appFetch(`/api/data/projects/`);
+            return appFetch(`/api/data/projects/?index=${index}`);
         },
         project(slug:string){
             return appFetch(`/api/data/projects/${slug}/`);

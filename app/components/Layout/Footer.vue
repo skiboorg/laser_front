@@ -82,7 +82,7 @@ const links = [
       <div class="block md:flex justify-between pb-8 text-[#7B7B7B] text-xs space-y-2 md:space-y-0">
         <p >© 2026 ЦЛТ «Урал». Все права защищены.</p>
         <div class="block md:flex flex-wrap gap-3 space-y-2 md:space-y-0">
-          <p>Политика конфиденциальности</p>
+          <p><a download href="/policy.docx">Политика конфиденциальности</a></p>
           <a  href="https://t.me/vkryaz" target="_blank" class="inline-block underline"><p>Разработка сайта</p></a>
 
         </div>

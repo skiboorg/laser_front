@@ -6,12 +6,26 @@
 const {slug} = useRoute().params
 const {$api} = useNuxtApp()
 const {data:equipment} = await useAsyncData(()=>$api.blank.equipment(slug))
+import { useBreakpoints } from '@vueuse/core'
 
+const breakpoints = useBreakpoints({
+  mobile: 0, // optional
+  tablet: 640,
+  laptop: 1024,
+  desktop: 1280,
+})
+
+
+const activeBreakpoint = breakpoints.active()
+const is_mobile = computed(()=>{
+
+  return  activeBreakpoint.value === 'mobile' || activeBreakpoint.value === 'tablet'
+})
 
 </script>
 <template>
   <BlockOffer
-      :bg_image="equipment.background_image"
+      :bg_image="is_mobile? equipment.image_background_mobile :equipment.image_background "
       :title="equipment.title"
       :subtitle="equipment.short_description"
       :tags="equipment.tags_list"
@@ -40,7 +54,7 @@ const {data:equipment} = await useAsyncData(()=>$api.blank.equipment(slug))
   </BlockSection>
   <BlockSection :show_title="false" class="text-white py-[120px]" style="background-image: url(/video.jpg)">
     <p  class="mb-5 " >Преимущества</p>
-    <h2 class="text-3xl md:text-4xl pb-6 md:pb-10 border-b border-[#B4B2B2] mb-6 md:mb-10" >Преимущества {{equipment.title}}</h2>
+    <h2 class="text-3xl md:text-4xl pb-6 md:pb-10 border-b border-[#B4B2B2] mb-6 md:mb-10" >{{equipment.title}}</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
       <div v-for="item in equipment.advantages" class="border border-white px-5 py-7  md:h-[320px] flex flex-col bg-white/10 backdrop-blur-sm">
