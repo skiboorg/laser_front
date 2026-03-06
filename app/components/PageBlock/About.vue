@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <BlockSection :show_title="false" class="text-white py-[88px] md:py-[120px] bg-[url(/about_m.png)] md:bg-[url(/about.png)] bg-cover">
+  <BlockSection :show_title="false" class="text-white py-[88px] md:py-[120px] bg-[url(/about_bg.png)] bg-cover">
 
 
     <p  class="mb-5 " >Информация</p>

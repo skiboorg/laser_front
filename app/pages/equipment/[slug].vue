@@ -25,7 +25,7 @@ const is_mobile = computed(()=>{
 </script>
 <template>
   <BlockOffer
-      :bg_image="is_mobile? equipment.image_background_mobile :equipment.image_background "
+      :bg_image="is_mobile? equipment.image_background_mobile :equipment.background_image "
       :title="equipment.title"
       :subtitle="equipment.short_description"
       :tags="equipment.tags_list"

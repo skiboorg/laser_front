@@ -30,7 +30,7 @@ const {data:news} =  useAsyncData(()=>$api.blank.news(false))
           <div class="text-2xl mb-6" >
             <nuxt-link :to="'/news/'+item.slug">{{item.name}}</nuxt-link>
           </div>
-          <div class="mb-3" v-html="item.short_description"></div>
+          <div class="mb-5" v-html="item.short_description"></div>
           <nuxt-link class="link inline" :to="'/news/'+item.slug">Подробнее</nuxt-link>
 
         </div>

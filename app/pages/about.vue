@@ -36,10 +36,25 @@ const mission = [
         '<path d="M0 32C0 23.1634 7.16344 16 16 16C24.8366 16 32 23.1634 32 32H0Z" fill="#1E37A3"/>\n' +
         '</svg>'},
     ]
+import { useBreakpoints } from '@vueuse/core'
 
+const breakpoints = useBreakpoints({
+  mobile: 0, // optional
+  tablet: 640,
+  laptop: 1024,
+  desktop: 1280,
+})
+
+
+const activeBreakpoint = breakpoints.active()
+const is_mobile = computed(()=>{
+
+  return  activeBreakpoint.value === 'mobile' || activeBreakpoint.value === 'tablet'
+})
 </script>
 <template>
   <BlockOffer
+      :bg_image="is_mobile? '/about_m.png' :'/about.png' "
       title="E-Laser"
       subtitle="Российская инжиниринговая компания, специализирующаяся на применении технологий лазерной наплавки и упрочнения поверхностей для восстановления поврежденных деталей оборудования в различных областях промышленности.
       <br>

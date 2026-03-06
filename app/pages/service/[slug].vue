@@ -12,38 +12,30 @@ const breakpoints = useBreakpoints({
   desktop: 1280,
 })
 
-
 const activeBreakpoint = breakpoints.active()
 
 const {slug} = useRoute().params
 const {$api} = useNuxtApp()
 const {data:service} = await useAsyncData(()=>$api.blank.service(slug))
+
 useSeoMeta({
   title: service.value.ment_title || service.value.title,
   description:service.value.meta_description || service.value.meta_description
 })
-const steps = [
-  {title:'Предварительный выезд и сбор требований', text:'Анализ детали, геометрии, рабочих условий, требуемых свойств и ограничений. Определение допусков по размеру'},
-  {title:'Подготовка', text:'Очистка поверхности, удаление загрязнений и обезжиривание. Локальная подготовка (шлифовка, зачищение). Нанесение защитных слоев вблизи зоны наплавки.'},
-  {title:'Настройка оборудования', text:'Выбор лазера, мощности, скорости сканирования и диаметра луча. Подбор присадочного материала и подачной схемы. Настройка системы охлаждения и преднагрева (если требуется)'},
-  {title:'Процесс наплавки', text:'Локальное плавление присадочного материала и частично основания: Формирование слоев по заданной геометрии, контроль толщины.'},
-  {title:'Контроль качества', text:'Осмотр, дефектоскопия, измерение геометрии, контроль деформаций, тесты твердости.'},
-  {title:'Постобработка', text:'Термообработка, шлифовка, покраска'},
-]
+
 function vkIframeUrl(link: string) {
   // Пример link: https://vkvideo.ru/video-93042683_456240169
   const match = link.match(/video-?(\d+)_?(\d+)/);
   if (!match) return '';
-
   const oid = `-${match[1]}`;  // ставим минус перед oid
   const id = match[2];
-
   return `https://vkvideo.ru/video_ext.php?oid=${oid}&id=${id}&autoplay=0`;
 }
-const is_mobile = computed(()=>{
 
+const is_mobile = computed(()=>{
   return  activeBreakpoint.value === 'mobile' || activeBreakpoint.value === 'tablet'
 })
+
 </script>
 <template>
   <BlockOffer
@@ -129,7 +121,7 @@ const is_mobile = computed(()=>{
   </BlockSection>
   <BlockSection :show_title="true" title="Этапы работы" small_title="Этапы">
     <div
-        v-for="(item, index) in steps"
+        v-for="(item, index) in service.steps"
         :key="index"
         class="flex flex-col items-start md:grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-0 pb-8 border-b border-[#E0E0E0] mb-8 md:items-center"
     >
