@@ -65,7 +65,7 @@ const links = [
           <div class="col-span-12 md:col-span-2">
             <p class="text-[14px] font-medium mb-4 md:mb-8">Услуги</p>
             <div class="space-y-3">
-              <nuxt-link class="block text-xs text-[#9F9F9F]" v-for="item in services?.results" :to="`/service/${item.slug}`">{{item.title}}</nuxt-link>
+              <a class="block text-xs text-[#9F9F9F]" v-for="item in services?.results" :href="`/service/${item.slug}`">{{item.title}}</a>
             </div>
           </div>
           <div class="col-span-12 md:col-span-4">
@@ -80,10 +80,14 @@ const links = [
 
       </div>
       <div class="block md:flex justify-between pb-8 text-[#7B7B7B] text-xs space-y-2 md:space-y-0">
-        <p >© 2026 ЦЛТ «Урал». Все права защищены.</p>
-        <div class="block md:flex flex-wrap gap-3 space-y-2 md:space-y-0">
-          <p><a download href="/policy.docx">Политика конфиденциальности</a></p>
-          <a  href="https://t.me/vkryaz" target="_blank" class="inline-block underline"><p>Разработка сайта</p></a>
+        <div class="space-y-2">
+          <p><a  target="_blank" href="/policy.docx">Реквизиты ООО «Центр лазерных технологий Урал»</a></p>
+          <p >© 2026 ЦЛТ «Урал». Все права защищены.</p>
+        </div>
+
+        <div class="block md:flex flex-wrap flex-col gap-2 space-y-2 md:space-y-0">
+          <p><a target="_blank" href="/policy.docx">Политика конфиденциальности</a></p>
+          <a  href="https://t.me/vkryaz" target="_blank" class="block underline"><p>Разработка сайта</p></a>
 
         </div>
 
