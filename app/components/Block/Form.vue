@@ -87,7 +87,7 @@ const sendForm = async () => {
               :disabled="!agree || !formData.name || !formData.company || !formData.phone|| !formData.email "
               @click="sendForm"
       />
-      <p v-else class="text-green-500 font-medium text-xl text-center">Форма отправлена</p>
+      <p v-else class="text-green-500 font-medium ">Благодарим вас за обращение! Ваш запрос будет обработан в течении 24 часов, и вы получиие ответ на указанные вами данные для обратной связи.</p>
     </div>
 
   </div>

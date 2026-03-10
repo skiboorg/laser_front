@@ -12,8 +12,10 @@ const props = defineProps(['tags','title','subtitle','bg_image','bg_video','no_b
       <p class="text-white text-3xl md:text-5xl mb-10 leading-[110%] lg:leading-[100%] max-w-[85%] md:max-w-full">{{title}}</p>
       <p class="text-white max-w-[470px] text-[16px] mb-24 leading-[150%]" v-html="subtitle"></p>
       <div v-if="alt_buttons" class="flex flex-wrap gap-2">
-        <Button severity="secondary" icon="pi pi-plus" icon-pos="right" label="Запросить стоимость"/>
-        <UIOutlineBtn v-if="!no_button" label="Бесплатная консультация"/>
+        <UIModalButton text="Запросить стоимость" :is_primary="false"/>
+        <a href="tel:+73512221777" v-if="!no_button">
+          <UIOutlineBtn  label="Бесплатная консультация"/>
+        </a>
    </div>
       <div v-else class="grid grid-cols-1 md:flex  gap-2">
         <UIModalButton :is_primary="false"/>

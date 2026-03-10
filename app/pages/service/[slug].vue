@@ -137,7 +137,10 @@ const is_mobile = computed(()=>{
   </BlockSection>
   <BlockSection :show_title="true" title="Реализованные проекты" small_title="Оборудование" >
     <template #extra>
-      <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Все проекты"/>
+      <nuxt-link to="/project">
+        <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Все проекты"/>
+      </nuxt-link>
+
     </template>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       <CardReleasedProject v-for="project in service.projects" :project="project"/>
