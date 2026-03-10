@@ -35,7 +35,8 @@ const is_mobile = computed(()=>{
 
   <BlockSection :show_title="true" title="Технические характеристики" small_title="Характеристики" >
     <template #extra>
-      <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>
+
+      <UIModalButton :is_primary="true"/>
     </template>
     <div class="space-y-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5" >

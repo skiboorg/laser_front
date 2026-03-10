@@ -4,7 +4,7 @@
 //   layout: 'auth'
 // })
 const {$api} = useNuxtApp()
-const {data:services} =  useAsyncData(()=>$api.blank.services())
+const {data:services} =  useAsyncData(()=>$api.blank.services(true))
 const {data:equipments} =  useAsyncData(()=>$api.blank.equipments())
 const {data:projects} =  useAsyncData(()=>$api.blank.projects(true))
 const {data:news} =  useAsyncData(()=>$api.blank.news(true))

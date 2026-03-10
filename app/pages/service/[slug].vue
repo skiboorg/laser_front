@@ -103,7 +103,7 @@ const is_mobile = computed(()=>{
   </BlockSection>
   <BlockSection :show_title="true" title="Технические характеристики" small_title="Характеристики" >
     <template #extra>
-      <Button  severity="primary" icon="pi pi-plus" icon-pos="right" label="Получить расчет"/>
+      <UIModalButton :is_primary="true"/>
     </template>
     <div class="space-y-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -126,7 +126,7 @@ const is_mobile = computed(()=>{
         class="flex flex-col items-start md:grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-0 pb-8 border-b border-[#E0E0E0] mb-8 md:items-center"
     >
       <div class="col-span-12 md:col-span-2">
-        <p class="text-primary text-[14px] md:text-2xl">0{{ index + 1 }}</p>
+        <p class="text-primary text-[14px] md:text-2xl">{{index < 9 ? '0' : ''}}{{ index + 1 }}</p>
       </div>
 
       <div class="col-span-12 md:col-span-4">
