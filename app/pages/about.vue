@@ -125,7 +125,7 @@ const is_mobile = computed(()=>{
   </BlockSection>
   <PageBlockAbout/>
   <PageBlockPartners/>
-  <PageBlockCert/>
+<!--  <PageBlockCert/>-->
 
 
 
