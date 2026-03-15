@@ -66,15 +66,12 @@ const is_mobile = computed(()=>{
 
   <BlockSection :show_title="true" title="Сильные стороны" small_title="Преимущества">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-      <CardInfo :class="item.class" v-for="(item,index) in features" :no_hover="true">
+      <CardInfo :class="item.class "  v-for="(item,index) in features" :no_hover="true">
         <template #top>
           <p class="text-primary"> 0{{index+1}}</p>
 
         </template>
         <template #title>{{item.title}}</template>
-        <template #text>
-         {{item.description}}
-        </template>
 
       </CardInfo>
 
@@ -125,7 +122,7 @@ const is_mobile = computed(()=>{
   </BlockSection>
   <PageBlockAbout/>
   <PageBlockPartners/>
-<!--  <PageBlockCert/>-->
+  <PageBlockCert/>
 
 
 

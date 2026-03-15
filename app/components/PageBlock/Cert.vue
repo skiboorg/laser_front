@@ -16,28 +16,28 @@
           <img src="~assets/images/cert/1_b.png" alt="preview" :style="slotProps.style" @click="slotProps.onClick" />
         </template>
       </Image>
-      <Image alt="Image" preview>
-        <template #previewicon>
-          <i class="pi pi-search"></i>
-        </template>
-        <template #image>
-          <img src="~assets/images/cert/2.png" alt="image" />
-        </template>
-        <template #preview="slotProps">
-          <img src="~assets/images/cert/2_b.png" alt="preview" :style="slotProps.style" @click="slotProps.onClick" />
-        </template>
-      </Image>
-      <Image alt="Image" preview>
-        <template #previewicon>
-          <i class="pi pi-search"></i>
-        </template>
-        <template #image>
-          <img src="~assets/images/cert/3.png" alt="image" />
-        </template>
-        <template #preview="slotProps">
-          <img src="~assets/images/cert/3_b.png" alt="preview" :style="slotProps.style" @click="slotProps.onClick" />
-        </template>
-      </Image>
+<!--      <Image alt="Image" preview>-->
+<!--        <template #previewicon>-->
+<!--          <i class="pi pi-search"></i>-->
+<!--        </template>-->
+<!--        <template #image>-->
+<!--          <img src="~assets/images/cert/2.png" alt="image" />-->
+<!--        </template>-->
+<!--        <template #preview="slotProps">-->
+<!--          <img src="~assets/images/cert/2_b.png" alt="preview" :style="slotProps.style" @click="slotProps.onClick" />-->
+<!--        </template>-->
+<!--      </Image>-->
+<!--      <Image alt="Image" preview>-->
+<!--        <template #previewicon>-->
+<!--          <i class="pi pi-search"></i>-->
+<!--        </template>-->
+<!--        <template #image>-->
+<!--          <img src="~assets/images/cert/3.png" alt="image" />-->
+<!--        </template>-->
+<!--        <template #preview="slotProps">-->
+<!--          <img src="~assets/images/cert/3_b.png" alt="preview" :style="slotProps.style" @click="slotProps.onClick" />-->
+<!--        </template>-->
+<!--      </Image>-->
 
 
     </div>
