@@ -53,7 +53,9 @@ const carouselConfig = {
       </template>
       <Carousel ref="carousel" v-bind="carouselConfig">
         <Slide v-for="i in items" class="flex flex-col items-start justify-start">
-          <img class="w-full h-[370px] object-cover mb-6" :src="i.image" alt="">
+          <div class="aspect-video w-full">
+          <img class="w-full  object-cover mb-6" :src="i.image" alt="">
+          </div>
           <p class="text-2xl">{{i.title}}</p>
           <p>{{i.description}}</p>
         </Slide>

@@ -21,7 +21,10 @@ const is_mobile = computed(()=>{
 
   return  activeBreakpoint.value === 'mobile' || activeBreakpoint.value === 'tablet'
 })
-
+useSeoMeta({
+  title: equipment.value.ment_title || equipment.value.title,
+  description:equipment.value.meta_description || equipment.value.meta_description
+})
 </script>
 <template>
   <BlockOffer

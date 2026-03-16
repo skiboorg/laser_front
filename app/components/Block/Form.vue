@@ -8,7 +8,7 @@ const emits = defineEmits(['send'])
 
 const formData = ref({
   name: '',
-  company: '',
+  comment: '',
   email: '',
   phone: '',
   file: null as File | null,
@@ -27,7 +27,7 @@ const sendForm = async () => {
   // Собираем данные в FormData
   const fd = new FormData()
   fd.append('name', formData.value.name || '')
-  fd.append('company', formData.value.company || '')
+  fd.append('comment', formData.value.comment || '')
   fd.append('email', formData.value.email || '')
   if (formData.value.file) {
     fd.append('file', formData.value.file)
@@ -51,17 +51,17 @@ const sendForm = async () => {
 
 <template>
   <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-3">
-    <div class="col-span-12 md:col-span-6">
-      <InputText fluid variant="filled" v-model="formData.name" placeholder="Ваше имя*"/>
-    </div>
-    <div class="col-span-12 md:col-span-6">
-      <InputText fluid variant="filled" v-model="formData.company" placeholder="Наименование компании*"/>
+    <div class="col-span-12 ">
+      <InputText fluid variant="filled" v-model="formData.name" placeholder="Введите ФИО или название компании*"/>
     </div>
     <div class="col-span-12">
       <InputText fluid variant="filled" v-model="formData.email" placeholder="Ваша почта*"/>
     </div>
     <div class="col-span-12">
       <InputText fluid variant="filled" v-model="formData.phone" placeholder="Ваш номер телефона*"/>
+    </div>
+    <div class="col-span-12">
+      <InputText fluid variant="filled" v-model="formData.comment" placeholder="Комментарии"/>
     </div>
     <div class="col-span-12 relative">
       <InputText fluid variant="filled" placeholder="Карточка предприятия"/>
@@ -84,7 +84,7 @@ const sendForm = async () => {
       <Button v-if="!send" fluid severity="primary" icon="pi pi-plus" icon-pos="right"
               :label="loading ? 'Отправка...' : 'Отправить заявку'"
               :loading="loading"
-              :disabled="!agree || !formData.name || !formData.company || !formData.phone|| !formData.email "
+              :disabled="!agree || !formData.name || !formData.phone|| !formData.email "
               @click="sendForm"
       />
       <p v-else class="text-green-500 font-medium ">Благодарим вас за обращение! Ваш запрос будет обработан в течении 24 часов, и вы получиие ответ на указанные вами данные для обратной связи.</p>
