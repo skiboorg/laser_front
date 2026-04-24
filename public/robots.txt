@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin
+Disallow: /login
+Disallow: /*?page=
+Allow: /
+
+Sitemap: https://https://e-laser.pro/sitemap.xml
+Host: e-laser.pro

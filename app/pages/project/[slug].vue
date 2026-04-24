@@ -6,6 +6,10 @@ const route = useRoute()
 
 const {$api} = useNuxtApp()
 const {data} = await useAsyncData(()=>$api.blank.project(route.params.slug))
+useSeoMeta({
+  title: data.value.title ,
+  description:data.value.description
+})
 </script>
 
 <template>

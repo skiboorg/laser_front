@@ -13,9 +13,9 @@ defineProps(["item","index"])
     </div>
     <div class="col-span-12 md:col-span-7">
       <div class="flex items-center gap-4 mb-8">
-        <p >
-          {{item.created}}
-        </p>
+<!--        <p >-->
+<!--          {{item.created}}-->
+<!--        </p>-->
         <p class="px-3 py-[6px] bg-[#E8EBF6]" v-for="tag in item.tags_list">
           {{tag}}
         </p>

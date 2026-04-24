@@ -19,8 +19,8 @@ const {$api} = useNuxtApp()
 const {data:service} = await useAsyncData(()=>$api.blank.service(slug))
 
 useSeoMeta({
-  title: service.value.ment_title || service.value.title,
-  description:service.value.meta_description || service.value.meta_description
+  title: service.value?.ment_title || service.value.title,
+  description:service.value?.meta_description || service.value.title
 })
 
 function vkIframeUrl(link: string) {

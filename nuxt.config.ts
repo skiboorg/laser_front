@@ -14,7 +14,22 @@ export default defineNuxtConfig({
     'nuxt3-notifications',
     'vue3-carousel-nuxt',
     'nuxt-marquee',
+    '@nuxtjs/sitemap'
   ],
+
+  site: {
+    url: 'https://e-laser.pro',
+  },
+
+  sitemap: {
+    urls: [
+      { loc: '/', priority: 1.0 },
+      { loc: '/about', priority: 0.5 },
+    ],
+    sources: [
+      '/api/__sitemap__/urls',
+    ],
+  },
 
   css: [
     '~/assets/styles/tailwind.css',
