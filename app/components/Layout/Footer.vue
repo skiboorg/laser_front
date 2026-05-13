@@ -51,7 +51,7 @@ const links = [
             <p class="text-[14px] font-medium mb-4 md:mb-8">Контакты</p>
             <div class="space-y-4">
               <a class="block text-[28px]" href="mailto:zakaz@e-laser.pro">zakaz@e-laser.pro</a>
-              <a class="block text-[28px]" href="tel:+73512221777">+7 (351) 222-1-777</a>
+              <a class="block text-[28px]" href="tel:+73512222888">+7 351 222 28 88</a>
             </div>
 
 
